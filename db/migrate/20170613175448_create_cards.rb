@@ -4,7 +4,7 @@ class CreateCards < ActiveRecord::Migration[5.0]
       t.string :website, null: false
       t.string :email, null: false
       t.string :password, null: false
-      t.references :user, index: true, foreign_key: true, null: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

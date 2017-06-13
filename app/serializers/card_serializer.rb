@@ -1,3 +1,3 @@
 class CardSerializer < ActiveModel::Serializer
-  attributes :id, :website, :email, :password
+  attributes :id, :user, :website, :email, :password
 end
