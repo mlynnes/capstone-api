@@ -7,8 +7,8 @@ default: &default
 
 development:
   <<: *default
-  database: <%= project_name %>_development
+  database: <%= pw-reminder %>_development
 
 test:
   <<: *default
-  database: <%= project_name %>_test
+  database: <%= pw-reminder %>_test
