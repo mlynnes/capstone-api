@@ -1,7 +1,10 @@
 # frozen_string_literal: true
+
 #
 source 'https://rubygems.org'
 ruby '2.3.1'
+
+gem 'attr_encrypted', '~> 3.0.0'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'bcrypt', '~> 3.1.11'
