@@ -1,2 +1,4 @@
+# PwReminder API
 
-# capstone-api
+## ERD
+http://imgur.com/a/WTPMC
