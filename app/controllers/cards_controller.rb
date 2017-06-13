@@ -1,11 +1,11 @@
-class CardsController < OpenReadController
+class CardsController < ProtectedController
   before_action :set_card, only: [:show, :update, :destroy]
 
   # GET /cards
   def index
     # add current user
     # @cards = Card.all
-    @cards = current_user.cards
+    @cards = current_user.cards.all
 
     render json: @cards
   end
