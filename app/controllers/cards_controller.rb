@@ -1,5 +1,6 @@
 class CardsController < ProtectedController
   before_action :set_card, only: [:show, :update, :destroy]
+  # skip_before_action :decrypt_card_password, only: [:update]
 
   # GET /cards
   def index
@@ -43,14 +44,21 @@ class CardsController < ProtectedController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_card
-      # @card = Card.find(params[:id])
-      @card = current_user.cards.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_card
+    # @card = Card.find(params[:id])
+    @card = current_user.cards.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def card_params
-      params.require(:card).permit(:website, :email, :password)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def card_params
+    params.require(:card).permit(:website, :email, :password)
+  end
+
+  # def decrypt_card_password
+  #   @card = current_user.cards.find(params[:id, :password])
+  #   crypt = ActiveSupport::MessageEncryptor.new(ENV['KEY'])
+  #   password_key = Card.find(1).password_key
+  #   puts crypt.decrypt_and_verify(password_key) # Original value?
+  # end
 end
